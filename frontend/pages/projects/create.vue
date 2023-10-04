@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card outlined>
     <v-card-title>{{ $t('overview.createProjectTitle') }}</v-card-title>
     <v-card-text>
       <v-form v-model="valid">
@@ -12,24 +12,24 @@
           v-model="editedItem.exclusiveCategories"
           :label="$t('overview.allowSingleLabel')"
         />
-        <v-checkbox
-          v-if="_canDefineLabel"
-          v-model="editedItem.allowMemberToCreateLabelType"
-          label="Allow project members to create label types"
-        />
+<!--        <v-checkbox-->
+<!--          v-if="_canDefineLabel"-->
+<!--          v-model="editedItem.allowMemberToCreateLabelType"-->
+<!--          label="Allow project members to create label types"-->
+<!--        />-->
         <template v-if="isSequenceLabelingProject">
-          <v-checkbox v-model="editedItem.allowOverlappingSpans" label="Allow overlapping spans" />
+          <v-checkbox v-model="editedItem.allowOverlappingSpans" label="允许重叠标注" />
           <v-img
             :src="require('~/assets/project/creation.gif')"
             height="200"
             position="left"
             contain
           />
-          <v-checkbox v-model="editedItem.useRelation" label="Use relation labeling" />
+          <v-checkbox v-model="editedItem.useRelation" label="使用关系标注" />
           <v-checkbox v-model="editedItem.enableGraphemeMode">
             <template #label>
               <div>
-                Count
+                计算
                 <v-tooltip bottom>
                   <template #activator="{ on }">
                     <a
@@ -43,13 +43,13 @@
                   </template>
                   Like emoji(🌷, 💩, and 👍), CRLF(\r\n), and so on.
                 </v-tooltip>
-                as one character
+                为一个字符
               </div>
             </template>
           </v-checkbox>
         </template>
         <random-order-field v-model="editedItem.enableRandomOrder" />
-        <sharing-mode-field v-model="editedItem.enableSharingMode" />
+<!--        <sharing-mode-field v-model="editedItem.enableSharingMode" />-->
       </v-form>
     </v-card-text>
     <v-card-actions class="ps-4">
@@ -72,7 +72,7 @@ import ProjectDescriptionField from '~/components/project/ProjectDescriptionFiel
 import ProjectNameField from '~/components/project/ProjectNameField.vue'
 import ProjectTypeField from '~/components/project/ProjectTypeField.vue'
 import RandomOrderField from '~/components/project/RandomOrderField.vue'
-import SharingModeField from '~/components/project/SharingModeField.vue'
+// import SharingModeField from '~/components/project/SharingModeField.vue'
 import TagList from '~/components/project/TagList.vue'
 import {
   DocumentClassification,
@@ -85,7 +85,7 @@ const initializeProject = () => {
   return {
     name: '',
     description: '',
-    projectType: DocumentClassification,
+    projectType: SequenceLabeling,
     enableRandomOrder: false,
     enableSharingMode: false,
     exclusiveCategories: false,
@@ -104,7 +104,7 @@ export default Vue.extend({
     ProjectNameField,
     ProjectDescriptionField,
     RandomOrderField,
-    SharingModeField,
+    // SharingModeField,
     TagList
   },
 

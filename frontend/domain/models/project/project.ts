@@ -11,15 +11,15 @@ export const Segmentation = 'Segmentation'
 export const Speech2text = 'Speech2text'
 
 export const allProjectTypes = <const>[
-  DocumentClassification,
+  // DocumentClassification,
   SequenceLabeling,
-  Seq2seq,
-  IntentDetectionAndSlotFilling,
-  ImageClassification,
-  ImageCaptioning,
-  BoundingBox,
-  Segmentation,
-  Speech2text
+  // Seq2seq,
+  // IntentDetectionAndSlotFilling,
+  // ImageClassification,
+  // ImageCaptioning,
+  // BoundingBox,
+  // Segmentation,
+  // Speech2text
 ]
 export type ProjectType = (typeof allProjectTypes)[number]
 const MIN_LENGTH = 1
@@ -141,16 +141,16 @@ export class Project {
   }
 
   get taskNames(): string[] {
-    if (this.projectType === IntentDetectionAndSlotFilling) {
-      return [DocumentClassification, SequenceLabeling]
-    }
+    // if (this.projectType === IntentDetectionAndSlotFilling) {
+    //   return [DocumentClassification, SequenceLabeling]
+    // }
     return [this.projectType]
   }
 
   get resourceType(): string {
-    if (this.projectType === DocumentClassification) {
-      return 'TextClassificationProject'
-    }
+    // if (this.projectType === DocumentClassification) {
+    //   return 'TextClassificationProject'
+    // }
     return `${this.projectType}Project`
   }
 

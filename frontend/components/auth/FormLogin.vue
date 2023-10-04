@@ -65,6 +65,12 @@ export default Vue.extend({
     }
   },
 
+  created() {
+    this.username = "bingshan@datalabel.com";
+    this.password = "bingshan";
+    this.tryLogin();
+  },
+
   methods: {
     async tryLogin() {
       try {

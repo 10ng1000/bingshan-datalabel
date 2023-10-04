@@ -80,6 +80,7 @@ export class APIProjectRepository {
     const ordering = query.sortDesc ? `-${sortBy}` : `${sortBy}`
     const url = `/projects?limit=${query.limit}&offset=${query.offset}&q=${query.q}&ordering=${ordering}`
     const response = await this.request.get(url)
+    
     return new Page(
       response.data.count,
       response.data.next,

@@ -13,14 +13,14 @@ export default {
   deleteProjectMessage: 'Êtes-vous sûr de vouloir supprimer ces projets ?',
   search: 'Recherche',
   projectTypes: [
-    'Classification des textes',
+    // 'Classification des textes',
     'Étiquetage des séquences',
-    'Séquence à séquence',
-    "Détection d'intention et remplissage d'emplacements",
-    "Classification d'images",
-    "Sous-titrage d'images",
-    "Détection d'objets",
-    'Segmentation',
-    'Reconnaissance vocale'
+    // 'Séquence à séquence',
+    // "Détection d'intention et remplissage d'emplacements",
+    // "Classification d'images",
+    // "Sous-titrage d'images",
+    // "Détection d'objets",
+    // 'Segmentation',
+    // 'Reconnaissance vocale'
   ]
 }

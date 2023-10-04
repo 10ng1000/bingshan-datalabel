@@ -33,6 +33,7 @@
     "class-transformer": "^0.5.1",
     "codemirror": "^5.*",
     "consola": "^2.15.3",
+    "element-ui": "^2.15.14",
     "filepond": "^4.28.2",
     "filepond-plugin-file-validate-type": "^1.2.6",
     "fs-extra": "10.0.0",
@@ -56,8 +57,10 @@
     "vue-virtual-scroller": "^1.0.10",
     "vue-youtube": "^1.4.0",
     "vuetify": "^2.*",
+    "vxe-table": "^3.4.11",
     "wavesurfer.js": "^5.1.0",
     "webpack": "^4.46.0",
+    "xe-utils": "^3.4.3",
     "yarn": "^1.22.10"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <the-header />
+<!--    <the-header />-->
     <v-main>
       <v-container fluid fill-height>
         <v-layout justify-center>
@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import TheHeader from '~/components/layout/TheHeader'
+// import TheHeader from '~/components/layout/TheHeader'
 
 export default {
   components: {
-    TheHeader
+    // TheHeader
   }
 }
 </script>

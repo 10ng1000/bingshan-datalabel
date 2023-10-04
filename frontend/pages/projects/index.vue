@@ -1,30 +1,31 @@
 <template>
-  <v-card>
+  <v-card outlined>
     <v-card-title v-if="isStaff">
-      <v-btn class="text-capitalize" color="primary" @click.stop="$router.push('projects/create')">
+      <el-button type="primary"
+                 @click.stop="$router.push('projects/create')">
         {{ $t('generic.create') }}
-      </v-btn>
-      <v-btn class="text-capitalize ms-2" color="primary" :disabled="!canClone" @click.stop="clone">
-        Clone
-      </v-btn>
-      <v-btn
-        class="text-capitalize ms-2"
+      </el-button>
+      <el-button type="primary"
+                 :disabled="!canClone" @click.stop="clone">
+        复制
+      </el-button>
+      <el-button
         :disabled="!canDelete"
         outlined
         @click.stop="dialogDelete = true"
       >
         {{ $t('generic.delete') }}
-      </v-btn>
+      </el-button>
       <v-dialog v-model="dialogDelete">
         <form-delete :selected="selected" @cancel="dialogDelete = false" @remove="remove" />
       </v-dialog>
     </v-card-title>
     <project-list
-      v-model="selected"
       :items="projects.items"
       :is-loading="isLoading"
       :total="projects.count"
       @update:query="updateQuery"
+      @select-change="selectChange"
     />
   </v-card>
 </template>
@@ -84,6 +85,9 @@ export default Vue.extend({
   },
 
   methods: {
+    selectChange(selected: Project[]) {
+      this.selected = selected
+    },
     async remove() {
       await this.$services.project.bulkDelete(this.selected)
       this.$fetch()

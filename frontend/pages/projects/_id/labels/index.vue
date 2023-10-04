@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card outlined>
     <v-tabs v-if="hasMultiType" v-model="tab">
       <template v-if="isIntentDetectionAndSlotFilling">
         <v-tab class="text-capitalize">Category</v-tab>
@@ -36,6 +36,7 @@
       :is-loading="isLoading"
       :disable-edit="canOnlyAdd"
       @edit="editItem"
+      @select-change="selectChange"
     />
   </v-card>
 </template>
@@ -161,6 +162,10 @@ export default Vue.extend({
   },
 
   methods: {
+    selectChange(selected: LabelDTO[]) {
+      this.selected = selected
+    },
+
     async list() {
       this.isLoading = true
       this.items = await this.service.list(this.projectId)

@@ -3,7 +3,7 @@
     v-bind="$attrs"
     :value="value"
     :items="value"
-    label="Tags"
+    label="标签"
     multiple
     chips
     deletable-chips

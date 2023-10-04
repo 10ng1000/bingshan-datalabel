@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card outlined>
     <v-card-title v-if="isProjectAdmin">
       <action-menu
         @upload="$router.push('dataset/import')"
@@ -81,6 +81,7 @@
       @edit="editItem"
       @assign="assign"
       @unassign="unassign"
+      @select-change="selectChange"
     />
   </v-card>
 </template>
@@ -180,6 +181,10 @@ export default Vue.extend({
   },
 
   methods: {
+    selectChange(selected: ExampleDTO[]) {
+      this.selected = selected
+    },
+
     async remove() {
       await this.$services.example.bulkDelete(this.projectId, this.selected)
       this.$fetch()

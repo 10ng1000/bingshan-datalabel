@@ -12,14 +12,14 @@ export default {
   deleteProjectMessage: 'Bist du dir sicher, dass du diese Projekte löschen willst?',
   search: 'Suchen',
   projectTypes: [
-    'Textklassifikation',
+    // 'Textklassifikation',
     'Sequenz-Labeling',
-    'Sequenz zu Sequenz',
-    'Intent-Erkennung und Slot-Füllung',
-    'Bildklassifikation',
-    'Bildbeschriftung',
-    'Objekt-Erkennung',
-    'Segmentierung',
-    'Sprache zu Text'
+    // 'Sequenz zu Sequenz',
+    // 'Intent-Erkennung und Slot-Füllung',
+    // 'Bildklassifikation',
+    // 'Bildbeschriftung',
+    // 'Objekt-Erkennung',
+    // 'Segmentierung',
+    // 'Sprache zu Text'
   ]
 }

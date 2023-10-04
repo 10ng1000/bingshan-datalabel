@@ -29,13 +29,13 @@
 
 <script>
 import {
-  mdiAccount,
-  mdiBookOpenOutline,
-  mdiChartBar,
-  mdiCog,
-  mdiCommentAccountOutline,
+  // mdiAccount,
+  // mdiBookOpenOutline,
+  // mdiChartBar,
+  // mdiCog,
+  // mdiCommentAccountOutline,
   mdiDatabase,
-  mdiHome,
+  // mdiHome,
   mdiLabel,
   mdiPlayCircleOutline
 } from '@mdi/js'
@@ -65,12 +65,12 @@ export default {
   computed: {
     filteredItems() {
       const items = [
-        {
-          icon: mdiHome,
-          text: this.$t('projectHome.home'),
-          link: '',
-          isVisible: true
-        },
+        // {
+        //   icon: mdiHome,
+        //   text: this.$t('projectHome.home'),
+        //   link: '',
+        //   isVisible: true
+        // },
         {
           icon: mdiDatabase,
           text: this.$t('dataset.dataset'),
@@ -85,44 +85,44 @@ export default {
             (this.isProjectAdmin || this.project.allowMemberToCreateLabelType) &&
             this.project.canDefineLabel
         },
-        {
-          icon: mdiLabel,
-          text: 'Relations',
-          link: 'links',
-          isVisible:
-            (this.isProjectAdmin || this.project.allowMemberToCreateLabelType) &&
-            this.project.canDefineRelation
-        },
-        {
-          icon: mdiAccount,
-          text: this.$t('members.members'),
-          link: 'members',
-          isVisible: this.isProjectAdmin
-        },
-        {
-          icon: mdiCommentAccountOutline,
-          text: 'Comments',
-          link: 'comments',
-          isVisible: this.isProjectAdmin
-        },
-        {
-          icon: mdiBookOpenOutline,
-          text: this.$t('guideline.guideline'),
-          link: 'guideline',
-          isVisible: this.isProjectAdmin
-        },
-        {
-          icon: mdiChartBar,
-          text: this.$t('statistics.statistics'),
-          link: 'metrics',
-          isVisible: this.isProjectAdmin
-        },
-        {
-          icon: mdiCog,
-          text: this.$t('settings.title'),
-          link: 'settings',
-          isVisible: this.isProjectAdmin
-        }
+        // {
+        //   icon: mdiLabel,
+        //   text: 'Relations',
+        //   link: 'links',
+        //   isVisible:
+        //     (this.isProjectAdmin || this.project.allowMemberToCreateLabelType) &&
+        //     this.project.canDefineRelation
+        // },
+        // {
+        //   icon: mdiAccount,
+        //   text: this.$t('members.members'),
+        //   link: 'members',
+        //   isVisible: this.isProjectAdmin
+        // },
+        // {
+        //   icon: mdiCommentAccountOutline,
+        //   text: 'Comments',
+        //   link: 'comments',
+        //   isVisible: this.isProjectAdmin
+        // },
+        // {
+        //   icon: mdiBookOpenOutline,
+        //   text: this.$t('guideline.guideline'),
+        //   link: 'guideline',
+        //   isVisible: this.isProjectAdmin
+        // },
+        // {
+        //   icon: mdiChartBar,
+        //   text: this.$t('statistics.statistics'),
+        //   link: 'metrics',
+        //   isVisible: this.isProjectAdmin
+        // },
+        // {
+        //   icon: mdiCog,
+        //   text: this.$t('settings.title'),
+        //   link: 'settings',
+        //   isVisible: this.isProjectAdmin
+        // }
       ]
       return items.filter((item) => item.isVisible)
     }

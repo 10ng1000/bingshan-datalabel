@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card outlined>
     <v-card-title>
       {{ $t('dataset.importDataTitle') }}
     </v-card-title>

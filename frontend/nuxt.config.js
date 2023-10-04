@@ -36,7 +36,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    'element-ui/lib/theme-chalk/index.css',
+    'vxe-table/lib/style.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -48,7 +51,9 @@ export default {
     '~/plugins/services.ts',
     '~/plugins/repositories.ts',
     '~/plugins/color.ts',
-    '~/plugins/role.ts'
+    '~/plugins/role.ts',
+    '~plugins/element-ui.js',
+    '~plugins/vxe-table.js',
   ],
   /*
    ** Nuxt.js modules
@@ -59,6 +64,10 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/eslint-module'
   ],
+
+  i18n: {
+    defaultLocale: 'zh'
+  },
 
   buildModules: [
     '@nuxt/typescript-build',
@@ -104,10 +113,10 @@ export default {
   proxy: {
     // Use a fake value for use at build-time
     '/v1/': {
-      target: process.env.API_URL || 'http://127.0.0.1:8000'
+      target: process.env.API_URL || 'http://82.157.118.175:8098'
     },
     '/media': {
-      target: process.env.API_URL || 'http://127.0.0.1:8000'
+      target: process.env.API_URL || 'http://82.157.118.175:8098'
     }
   },
   /*
@@ -152,6 +161,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    vendor: ['element-ui'],
     publicPath: process.env.PUBLIC_PATH || '/_nuxt/',
     extend(config, _) {
       // config.module.rules.push({
