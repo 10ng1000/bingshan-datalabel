@@ -30,3 +30,9 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style scoped>
+#inspire {
+  visibility: hidden;
+}
+</style>

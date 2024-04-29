@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <the-header />
+    <!-- <the-header /> -->
     <nuxt />
     <the-footer />
   </v-app>
@@ -8,12 +8,12 @@
 
 <script>
 import TheFooter from '@/components/layout/TheFooter'
-import TheHeader from '@/components/layout/TheHeader'
+// import TheHeader from '@/components/layout/TheHeader'
 
 export default {
   components: {
-    TheFooter,
-    TheHeader
+    TheFooter
+    // TheHeader
   }
 }
 </script>
