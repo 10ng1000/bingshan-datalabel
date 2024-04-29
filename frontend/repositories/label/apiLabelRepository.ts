@@ -76,4 +76,23 @@ export class APILabelRepository implements LabelRepository {
       }
     }
   }
+  
+  async uploadFileToEntity(payload: FormData): Promise<void> {
+    const url = `http://82.157.118.175:43360/knowledge_base/upload_docs`
+    const config = {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }
+    try {
+      await this.request.post(url, payload, config)
+    } catch (e: any) {
+      const data = e.response.data
+      if ('detail' in data) {
+        throw new Error(data.detail)
+      } else {
+        throw new Error('Text field is required')
+      }
+    }
+  }
 }

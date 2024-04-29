@@ -25,11 +25,14 @@
           sortable
           title="名称">
         <template slot-scope="scope">
-          <el-link  type="primary"
-                    :underline="false"
-                    @click="openObject(scope.row.id)">
-            {{ scope.row.name }}
-          </el-link>
+          <nuxt-link :to="localePath(`/projects/${scope.row.id}`)">
+            <span>{{ scope.row.name }}</span>
+          </nuxt-link>
+<!--          <el-link  type="primary"-->
+<!--                    :underline="false"-->
+<!--                    @click="openObject(scope.row.id)">-->
+<!--            {{ scope.row.name }}-->
+<!--          </el-link>-->
         </template>
       </vxe-column>
       <vxe-column

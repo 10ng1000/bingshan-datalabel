@@ -2,7 +2,7 @@
   <v-card outlined>
     <v-card-title v-if="isStaff">
       <el-button type="primary"
-                 @click.stop="$router.push('projects/create')">
+                 @click.stop="$router.push(localePath('projects/create'))">
         {{ $t('generic.create') }}
       </el-button>
       <el-button type="primary"
@@ -98,7 +98,7 @@ export default Vue.extend({
     async clone() {
       const project = await this.$services.project.clone(this.selected[0])
       this.selected = []
-      this.$router.push(`/projects/${project.id}/settings`)
+      this.$router.push(this.localePath(`/projects/${project.id}/settings`))
     },
 
     updateQuery(query: object) {

@@ -12,4 +12,6 @@ export interface LabelRepository {
   bulkDelete(projectId: string, labelIds: number[]): Promise<void>
 
   uploadFile(projectId: string, payload: FormData): Promise<void>
+
+  uploadFileToEntity(payload: FormData): Promise<void>
 }

@@ -16,6 +16,7 @@
         @create="$router.push('labels/add?type=' + labelType)"
         @upload="$router.push('labels/import?type=' + labelType)"
         @download="download"
+        @uploadToEntity="uploadToEntity"
       />
       <v-btn
         v-if="!canOnlyAdd"
@@ -181,6 +182,12 @@ export default Vue.extend({
 
     async download() {
       await this.service.export(this.projectId)
+    },
+
+    async uploadToEntity() {
+      const project = await this.$services.project.findById(this.projectId)
+      const project_name = project.name
+      await this.service.uploadToEntity(this.projectId, project_name)
     },
 
     editItem(item: LabelDTO) {

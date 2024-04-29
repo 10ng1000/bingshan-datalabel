@@ -45,7 +45,7 @@ After installation, run the following commands:
 # Initialize database.
 doccano init
 # Create a super user.
-doccano createuser --username admin --password pass
+doccano createuser --username admin --password dashuju1001jushuda
 # Start a web server.
 doccano webserver --port 8000
 ```

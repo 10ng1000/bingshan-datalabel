@@ -118,6 +118,12 @@ export default {
     '/media': {
       target: process.env.API_URL || 'http://82.157.118.175:8098'
     }
+    // '/v1/': {
+    //   target: 'http://127.0.0.1:8000'
+    // },
+    // '/media': {
+    //   target: 'http://127.0.0.1:8000'
+    // }
   },
   /*
    ** vuetify module configuration

@@ -50,9 +50,27 @@ export class LabelApplicationService {
     link.click()
   }
 
+  // 上传label到entity数据库中
+  public async uploadToEntity(projectId: string, projectName: string) {
+    const items = await this.repository.list(projectId)
+    const labels = items.map((item) => new LabelDTO(item))
+    // 以txt的格式，每一行是一个label
+    const content = labels.map((label) => label.text).join('\n')
+    // 格式： multipart/form-data
+    // key: files, knowledge_base_name
+    const formData = new FormData()
+    formData.append('files', new Blob([content], { type: 'text/plain' }), projectName + '.txt')
+    formData.append('knowledge_base_name', 'entity')
+    await this.repository.uploadFileToEntity(formData)
+    // console.log(content)
+    // console.log(projectName)
+  }
+
   async upload(projectId: string, file: File) {
     const formData = new FormData()
     formData.append('file', file)
     await this.repository.uploadFile(projectId, formData)
   }
+
+
 }

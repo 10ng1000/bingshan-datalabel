@@ -224,19 +224,21 @@ if DATABASES["default"].get("ENGINE") == "sql_server.pyodbc":
 # Sessions and CSRF
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-# SESSION_COOKIE_SECURE = env.bool("SESSION_COOKIE_SECURE", False)
-SESSION_COOKIE_SECURE = True
-SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = env.bool("SESSION_COOKIE_SECURE", False)
 CSRF_COOKIE_SECURE = env.bool("CSRF_COOKIE_SECURE", False)
 CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", [])
 
 # Allow all host headers
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*","61.160.213.180","82.157.118.175", "10.0.16.17", "127.0.0.1"]
+CORS_ORIGIN_ALLOW_ALL = True
+CSRF_TRUSTED_ORIGINS = ["http://0.0.0.0:8999","http://82.157.118.175:8098","http://82.157.118.175:8099","http://127.0.0.1:3000", "http://0.0.0.0:3000", "http://localhost:3000","http://127.0.0.1:8098", "http://0.0.0.0:8098", "http://localhost:8098","http://127.0.0.1:8099", "http://0.0.0.0:8099", "http://localhost:8099"]
+CSRF_TRUSTED_ORIGINS += env.list("CSRF_TRUSTED_ORIGINS", [])
+print(CSRF_TRUSTED_ORIGINS )
 
-if DEBUG:
-    CORS_ORIGIN_ALLOW_ALL = True
-    CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:3000", "http://0.0.0.0:3000", "http://localhost:3000", "http://127.0.0.1:3001", "http://0.0.0.0:3001", "http://localhost:3001"]
-    CSRF_TRUSTED_ORIGINS += env.list("CSRF_TRUSTED_ORIGINS", [])
+# if DEBUG:
+#     CORS_ORIGIN_ALLOW_ALL = True
+#     CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:3000", "http://0.0.0.0:3000", "http://localhost:3000","http://127.0.0.1:8098", "http://0.0.0.0:8098", "http://localhost:8098","http://127.0.0.1:8099", "http://0.0.0.0:8099", "http://localhost:8099"]
+#     CSRF_TRUSTED_ORIGINS += env.list("CSRF_TRUSTED_ORIGINS", [])
 
 # Batch size for importing data
 IMPORT_BATCH_SIZE = env.int("IMPORT_BATCH_SIZE", 1000)

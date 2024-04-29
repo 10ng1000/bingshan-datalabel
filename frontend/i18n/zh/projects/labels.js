@@ -16,5 +16,6 @@ export default {
   importTitle: '导入标签',
   importMessage1: '样例格式',
   importMessage2: '请选择一个文件',
-  filePlaceholder: '输入文件'
+  filePlaceholder: '输入文件',
+  uploadToEntity: '上传到实体数据库',
 }

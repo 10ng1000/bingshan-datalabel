@@ -5,12 +5,13 @@
     @create="$emit('create')"
     @upload="$emit('upload')"
     @download="$emit('download')"
+    @uploadToEntity="$emit('uploadToEntity')"
   />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { mdiPencil, mdiUpload, mdiDownload } from '@mdi/js'
+import { mdiPencil, mdiUpload, mdiDownload, mdiDatabase } from '@mdi/js'
 import ActionMenu from '~/components/utils/ActionMenu.vue'
 
 export default Vue.extend({
@@ -47,6 +48,11 @@ export default Vue.extend({
             title: this.$t('labels.exportLabels'),
             icon: mdiDownload,
             event: 'download'
+          },
+          {
+            title: this.$t('labels.uploadToEntity'),
+            icon: mdiDatabase,
+            event: 'uploadToEntity'
           }
         ])
       }
