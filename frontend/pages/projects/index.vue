@@ -2,7 +2,7 @@
   <v-card outlined>
     <v-card-title v-if="isStaff">
       <el-button type="primary"
-                 @click.stop="$router.push(localePath('projects/create'))">
+                 @click.stop="$router.push('projects/create')">
         {{ $t('generic.create') }}
       </el-button>
       <el-button type="primary"
