@@ -6,9 +6,6 @@
             <v-flex>
               <v-card>
               <v-card-title>
-                <el-button @click="toLabeling" type="success">
-                  {{ $t('home.startAnnotation') }}
-                </el-button>
                 <el-button type="primary" @click="$router.push(localePath('/projects'))">
                   {{ $t('header.projects') }}
                 </el-button>
@@ -38,7 +35,6 @@ export default {
   // components: {
   //   TheHeader
   // },
-
   data() {
     return {
       drawerLeft: null,
@@ -56,14 +52,7 @@ export default {
   },
 
   methods: {
-    toLabeling() {
-      const query = this.$services.option.findOption(this.$route.params.id)
-      const link = getLinkToAnnotationPage(this.$route.params.id, this.project.projectType)
-      this.$router.push({
-        path: this.localePath(link),
-        query
-      })
-    },
+    
   }
 }
 </script>
