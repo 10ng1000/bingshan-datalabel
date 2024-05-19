@@ -2,12 +2,12 @@
   <v-card outlined>
     <v-tabs v-if="hasMultiType" v-model="tab">
       <template v-if="isIntentDetectionAndSlotFilling">
-        <v-tab class="text-capitalize">Category</v-tab>
-        <v-tab class="text-capitalize">Span</v-tab>
+        <v-tab class="text-capitalize">类别</v-tab>
+        <v-tab class="text-capitalize">实体</v-tab>
       </template>
       <template v-else>
-        <v-tab class="text-capitalize">Span</v-tab>
-        <v-tab class="text-capitalize">Relation</v-tab>
+        <v-tab class="text-capitalize">实体</v-tab>
+        <v-tab class="text-capitalize">关系</v-tab>
       </template>
     </v-tabs>
     <v-card-title>

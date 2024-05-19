@@ -37,7 +37,7 @@
           width="100px">
         <template slot-scope="scope">
           <v-chip :color="scope.row.isConfirmed ? 'success' : 'warning'" text small>
-            {{ scope.row.isConfirmed ? 'Finished' : 'In progress' }}
+            {{ scope.row.isConfirmed ? '已完成' : '进行中' }}
           </v-chip>
         </template>
       </vxe-column>
@@ -98,7 +98,7 @@
 <!--    </template>-->
 <!--    <template #[`item.isConfirmed`]="{ item }">-->
 <!--      <v-chip :color="item.isConfirmed ? 'success' : 'warning'" text small>-->
-<!--        {{ item.isConfirmed ? 'Finished' : 'In progress' }}-->
+<!--        {{ item.isConfirmed ? '已完成' : '进行中' }}-->
 <!--      </v-chip>-->
 <!--    </template>-->
 <!--    <template #[`item.text`]="{ item }">-->

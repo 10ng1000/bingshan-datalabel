@@ -42,7 +42,7 @@
       <annotation-progress :progress="progress" />
       <v-card class="mt-4">
         <v-card-title>
-          Label Types
+          标注类型
           <v-spacer />
           <v-btn icon @click="showLabelTypes = !showLabelTypes">
             <v-icon>{{ showLabelTypes ? mdiChevronUp : mdiChevronDown }}</v-icon>
@@ -52,8 +52,8 @@
           <v-card-text v-show="showLabelTypes">
             <v-switch v-if="useRelationLabeling" v-model="relationMode">
               <template #label>
-                <span v-if="relationMode">Relation</span>
-                <span v-else>Span</span>
+                <span v-if="relationMode">关系</span>
+                <span v-else>实体</span>
               </template>
             </v-switch>
             <v-chip-group v-model="selectedLabelIndex" column>

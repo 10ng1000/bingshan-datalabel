@@ -31,7 +31,7 @@
     </template>
     <template #[`item.isConfirmed`]="{ item }">
       <v-chip :color="item.isConfirmed ? 'success' : 'warning'" text small>
-        {{ item.isConfirmed ? 'Finished' : 'In progress' }}
+        {{ item.isConfirmed ? '已完成' : '进行中' }}
       </v-chip>
     </template>
     <template #[`item.url`]="{ item }">
